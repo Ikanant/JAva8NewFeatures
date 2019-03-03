@@ -17,7 +17,11 @@ public class ChainConsumers {
 		Consumer<String> c1 = s -> System.out.println(s);
 		Consumer<String> c2 = System.out::println; // Same as above... but using a method reference instead
 		
-		strings.forEach(c1);
-		strings.forEach(c2);
+		// Now let's create another consumer of strings
+		Consumer<String> nc1 = s -> result.add(s);
+		Consumer<String> nc2 = result::add;
+		
+		strings.forEach(c1.andThen(nc2));
+		System.out.println("Size of the reult: " + result.size());
 	}
 }
