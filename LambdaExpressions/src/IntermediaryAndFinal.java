@@ -16,7 +16,7 @@ public class IntermediaryAndFinal {
 		stream
 			.peek(System.out::println)
 			.filter(p1.or(p2))
-			.peek(list:: add);
+			.forEach(list:: add);
 		
 		System.out.println("List size: " + list.size());
 	}
