@@ -18,3 +18,4 @@ public class ReductionExample {
 		System.out.println("Blue: " + blue);
 	}
 }
+ 
